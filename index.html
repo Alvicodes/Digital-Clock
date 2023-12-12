@@ -10,7 +10,14 @@
 </head>
 
 <body>
-    <h2>Digital Clock</h2>
+    <div id="clockSwitch">
+        <button id="digiCock">Digital Clock</button>
+        <button id="timerTitle">Countdown Timer</bu>
+    </div>
+    <div id="date">
+        <span id="dayOfTheWeek"></span>
+        <!-- <span id="numberDate"></span> -->
+    </div>
     <div class="clock">
         <div>
             <span id="hour">00</span>
@@ -31,6 +38,19 @@
             <span id="ampm">AM</span>
         </div>
     </div>
+    <div id="timerContainer">
+        <div class="timer">
+            00 : 00 : 00 
+        </div>
+        <div class="timerBtns ">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+            <button id="reset">Reset</button>
+        </div>
+
+    </div>
+
+
 </body>
 
 </html>
