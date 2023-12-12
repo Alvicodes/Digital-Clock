@@ -11,12 +11,19 @@
 
 <body>
     <div id="clockSwitch">
-        <button id="digiCock">Digital Clock</button>
-        <button id="timerTitle">Countdown Timer</bu>
+        <h2>Timer</h2>
+        <!-- <div class="toggle-wrapper"> -->
+        <div class="toggle transparent">
+            <input id="transparent" type="checkbox" checked />
+            <label class="toggle-item" for="transparent"></label>
+        </div>
+        <!-- </div> -->
+        <h2>Clock</h2>
+
     </div>
     <div id="date">
         <span id="dayOfTheWeek"></span>
-        <!-- <span id="numberDate"></span> -->
+        <span id="ampm">AM</span>
     </div>
     <div class="clock">
         <div>
@@ -34,13 +41,11 @@
             <span class="text">Seconds</span>
 
         </div>
-        <div>
-            <span id="ampm">AM</span>
-        </div>
+
     </div>
     <div id="timerContainer">
         <div class="timer">
-            00 : 00 : 00 
+            00 : 00 : 00
         </div>
         <div class="timerBtns ">
             <button id="start">Start</button>

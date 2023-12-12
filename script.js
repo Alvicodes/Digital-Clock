@@ -4,19 +4,9 @@ const minuteEl = document.getElementById("minutes");
 const secondEl = document.getElementById("seconds");
 const ampmEl = document.getElementById("ampm");
 const dayOfTheWeek = document.getElementById("dayOfTheWeek");
-const numberDate = document.getElementById("numberDate");
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-// Timer variables
-const start = document.getElementById("start");
-const pause = document.getElementById("pause");
-const restart = document.getElementById("restart");
 
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
-let stopstatus = 0;
-let timer = document.querySelector('timer')
-
+// Clock
 function updateClock() {
     let h = new Date().getHours();
     let m = new Date().getMinutes();
@@ -45,7 +35,17 @@ function updateClock() {
         updateClock()
     }, 1000)
 }
-updateClock()
+updateClock();
+//  Timer 
+const start = document.getElementById("start");
+const pause = document.getElementById("pause");
+const reset = document.getElementById("reset");
+
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+let stopstatus = 0;
+let timer = document.querySelector('.timer')
 
 start.addEventListener('click', () => {
     if (stopstatus !== 0) {
@@ -54,11 +54,11 @@ start.addEventListener('click', () => {
     stopstatus = setInterval(() => {
         seconds += 1;
         if (seconds === 60) {
-            seconds == 0;
+            seconds = 0;
             minutes++;
             if (minutes === 60) {
-                minutes == 0;
-                hours++
+                minutes = 0;
+                hours++;
             }
         }
         h = hours < 10 ? "0" + hours : hours;
@@ -67,8 +67,41 @@ start.addEventListener('click', () => {
 
         timer.innerHTML = `${h} : ${m} : ${s}`;
     }, 1000);
-})
+});
 
+pause.addEventListener('click', () => {
+    clearInterval(stopstatus);
+});
+
+reset.addEventListener('click', () => {
+    clearInterval(stopstatus);
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    timer.innerHTML = '00 : 00 : 00 ';
+});
+// Toggle button
+const clock = document.querySelector(".clock");
+const toggleItem = document.querySelector(".toggle-item");
+const tglCheckbox = document.getElementById("transparent");
+const timerContainer = document.getElementById("timerContainer");
+
+tglCheckbox.addEventListener('change', () => {
+    if (tglCheckbox.checked) {
+        // clock.style.transition = ".10s ease";
+        // timerContainer.style.transition = "all .30s ease";
+        timerContainer.style.display = "none";
+        sleep(80);
+        clock.style.display = "flex";
+    }
+    else {
+        clock.style.display = "none";
+        sleep(80);
+        timerContainer.style.display = "inline-block";
+        toggleItem.style.background = "transparernt";
+    }
+})
+function sleep(milliseconds) { const date = Date.now(); let currentDate = null; do { currentDate = Date.now(); } while (currentDate - date < milliseconds); }
 
 
 
