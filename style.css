@@ -8,7 +8,7 @@
         content: '';
         position: absolute;
     }
-    
+
     font-family: Orbitron;
 }
 
@@ -19,7 +19,6 @@ body {
     align-items: center;
     height: 100vh;
     justify-content: center;
-    /* background: url("https://images.unsplash.com/photo-1682687219570-4c596363fd96?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
     background-color: rgb(244, 244, 244);
     background-size: cover;
     overflow: hidden;
@@ -30,7 +29,7 @@ body {
     border-radius: 40px;
     padding: 1.5rem 1.25rem;
     background-color: white;
-    filter: drop-shadow(1px 5px 5px rgb(0, 0, 138, 0.4)); 
+    filter: drop-shadow(1px 5px 5px rgb(0, 0, 138, 0.4));
 }
 
 #clockSwitch {
@@ -63,7 +62,8 @@ input#transparent {
     width: 40px;
     display: flex;
 }
- 
+
+
 label.toggle-item {
     width: 4em;
     background-color: white;
@@ -92,6 +92,7 @@ label.toggle-item {
     }
 
 }
+
 /*
 .transparent {
     label {
@@ -112,7 +113,7 @@ label.toggle-item {
 */
 #transparent:checked+label {
     &:before {
-        transform: translateX(30px);   
+        transform: translateX(30px);
     }
 }
 
@@ -129,6 +130,7 @@ label.toggle-item {
     padding: 5px 5px;
     margin: 0.75rem 0rem 0.0 0;
 }
+
 #ampm {
     background-color: rgb(255, 255, 255);
     color: blueviolet;
@@ -136,24 +138,25 @@ label.toggle-item {
     padding: 0 0.5rem;
     margin: 0;
     border-radius: 5px;
-  
 }
 
-.clock, .timer {
+.clock,
+.timer {
     display: flex;
     justify-content: space-between;
     width: 320px;
     /* display: none; */
 }
 
-.clock div, .timer div {
-    border-radius: 0  0 10px 10px;
+.clock div,
+.timer div {
+    border-radius: 0 0 10px 10px;
     background-color: rgb(106, 91, 205, 0.8);
     /* box-shadow: 0 2px 3px rgb(72, 67, 71); */
-
 }
 
-.clock span, .timer span {
+.clock span,
+.timer span {
     width: 100px;
     height: 80px;
     color: white;
@@ -164,9 +167,8 @@ label.toggle-item {
     text-shadow: 2px 3px 4px rgb(0, 0, 0, 0.3);
 }
 
-
-
-.clock .text, .timer .textTimer {
+.clock .text,
+.timer .textTimer {
     height: 2rem;
     font-size: 10px;
     text-transform: uppercase;
@@ -176,22 +178,8 @@ label.toggle-item {
     border-bottom-right-radius: 10px;
 }
 
-
-/* .clock #ampm {
-    bottom: 0;
-    position: absolute;
-    width: 60px;
-    height: 30px;
-    font-size: 20px;
-    background-color: rgb(80, 33, 138);
-    border-radius: 10px;
-    box-shadow: 0 2px 3px rgb(72, 67, 71);
-} */
-
-
 #timerContainer {
     display: none;
-
 }
 
 .timerBtns {
@@ -200,11 +188,12 @@ label.toggle-item {
     justify-content: space-between;
     align-items: center;
     /* background-color:rgb(252, 247, 238, 0.5); */
-    visibility:hidden;
+    visibility: hidden;
     margin-top: 0;
     margin-bottom: 0.0;
 }
-.timerBtns button{
+
+.timerBtns button {
     width: 100px;
     max-width: 1200px;
     display: flex;
@@ -221,15 +210,71 @@ label.toggle-item {
     border: none;
     border-radius: 10px;
     margin-bottom: 0;
-    /* padding: 10px; */
-    /* margin: 5px 10px; */
     cursor: pointer;
     transition: all 0.15s ease-in-out;
 }
-#start:hover, #pause:hover, #reset:hover {
+
+#start:hover,
+#pause:hover,
+#reset:hover {
     /* color: white; */
-    translate: 1px 1px; 
+    translate: 1px 1px;
 }
 
+input:checked .toggle-item {
+    background-color: blue;
+}
 
-/* @media screen and (max-device-width: 480px) {} */
+/* Tablet styles (max-width: 768px)
+Mobile styles (max-width: 414px) */
+
+@media screen and (max-width: 480px) {}
+
+/* Small screens */
+@media all and (max-width: 480px) {
+
+    #mainContainer {
+        border-radius: 40px;
+        padding: 1.5rem 1.25rem;
+        background-color: white;
+        filter: drop-shadow(1px 5px 5px rgb(0, 0, 138, 0.4));
+        max-width: 290px;
+    }
+
+    .clock,
+    .timer {
+        width: 248px;
+    }
+
+    .clock span,
+    .timer span {
+        width: 75px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .clock .text,
+    .timer .textTimer {
+        height: 2rem;
+        letter-spacing: 2px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    h2 {
+        letter-spacing: 3.5px;
+        font-size: 13.5px;
+    }
+
+    #date {
+        width: 248px;
+        padding: 5px 5px;
+        margin: 0.75rem 0rem 0.0 0;
+        font-size: 12px;
+    }
+
+    .timerBtns {
+        width: 248px;
+    }
+
+}
