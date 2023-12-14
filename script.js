@@ -4,6 +4,7 @@ const minuteEl = document.getElementById("minutes");
 const secondEl = document.getElementById("seconds");
 const ampmEl = document.getElementById("ampm");
 const dayOfTheWeek = document.getElementById("dayOfTheWeek");
+const dayOfTheWeekFull = document.getElementById("dayOfTheWeekFull");
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 // Clock
@@ -29,7 +30,8 @@ function updateClock() {
     minuteEl.innerText = m;
     secondEl.innerText = s;
     ampmEl.innerText = ampm;
-    dayOfTheWeek.innerText = day + " " + fullDate;
+    dayOfTheWeek.innerText = day;
+    dayOfTheWeekFull.innerText = fullDate;
 
     setTimeout(() => {
         updateClock()
@@ -49,6 +51,7 @@ let timer = document.querySelector('.timer');
 let hourTimer = document.getElementById("hourTimer");
 let minuteTimer = document.getElementById("minuteTimer");
 let secondTimer = document.getElementById("secondTimer");
+const timerBtns = document.querySelector(".timerBtns");
 
 start.addEventListener('click', () => {
     if (stopstatus !== 0) {
@@ -96,18 +99,17 @@ const timerContainer = document.getElementById("timerContainer");
 tglCheckbox.addEventListener('change', () => {
     if (tglCheckbox.checked) {
         timerContainer.style.display = "none";
-        sleep(80);
         clock.style.display = "flex";
+        timerBtns.style.visibility = "hidden";
     }
     else {
         clock.style.display = "none";
-        sleep(80);
         timerContainer.style.display = "inline-block";
+        timerBtns.style.visibility = "visible";
         // toggleItem.style.background = "white";
         // toggleItem.style.background = "transparernt";
     }
 })
-function sleep(milliseconds) { const date = Date.now(); let currentDate = null; do { currentDate = Date.now(); } while (currentDate - date < milliseconds); }
 
 
 

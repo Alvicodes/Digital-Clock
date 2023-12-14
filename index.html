@@ -10,67 +10,69 @@
 </head>
 
 <body>
-    <div id="clockSwitch">
-        <h2>Timer</h2>
-        <!-- <div class="toggle-wrapper"> -->
-        <div class="toggle transparent">
-            <input id="transparent" type="checkbox" checked />
-            <label class="toggle-item" for="transparent"></label>
-        </div>
-        <!-- </div> -->
-        <h2>Clock</h2>
-
-    </div>
-    <div id="date">
-        <span id="dayOfTheWeek"></span>
-        <span id="ampm">AM</span>
-    </div>
-    <div class="timerBtns">
-        <button id="start">Start</button>
-        <button id="pause">Pause</button>
-        <button id="reset">Reset</button>
-    </div>
-    <div class="clock">
-        <div>
-            <span id="hour">00</span>
-            <span class="text">Hours</span>
+    <div id="mainContainer">
+        <div id="clockSwitch">
+            <h2>Timer</h2>
+            <!-- <div class="toggle-wrapper"> -->
+            <div class="toggle transparent">
+                <input id="transparent" type="checkbox" checked />
+                <label class="toggle-item" for="transparent"></label>
+            </div>
+            <!-- </div> -->
+            <h2>Clock</h2>
 
         </div>
-        <div>
-            <span id="minutes">00</span>
-            <span class="text">Minutes</span>
-
+        <div id="date">
+            <span id="dayOfTheWeek"></span>
+            <span id="dayOfTheWeekFull"></span>
+            <span id="ampm">AM</span>
         </div>
-        <div>
-            <span id="seconds">00</span>
-            <span class="text">Seconds</span>
-
+        <div class="timerBtns">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+            <button id="reset">Reset</button>
         </div>
-
-    </div>
-    <div id="timerContainer">
-        <div class="timer">
-            <!-- 00 : 00 : 00 -->
+        <div class="clock">
             <div>
-                <span id="hourTimer">00</span>
-                <span class="textTimer">Hours</span>
+                <span id="hour">00</span>
+                <span class="text">Hours</span>
 
             </div>
             <div>
-                <span id="minuteTimer">00</span>
-                <span class="textTimer">Minutes</span>
+                <span id="minutes">00</span>
+                <span class="text">Minutes</span>
 
             </div>
             <div>
-                <span id="secondTimer">00</span>
-                <span class="textTimer">Seconds</span>
+                <span id="seconds">00</span>
+                <span class="text">Seconds</span>
 
             </div>
+
+        </div>
+        <div id="timerContainer">
+            <div class="timer">
+                <!-- 00 : 00 : 00 -->
+                <div>
+                    <span id="hourTimer">00</span>
+                    <span class="textTimer">Hours</span>
+
+                </div>
+                <div>
+                    <span id="minuteTimer">00</span>
+                    <span class="textTimer">Minutes</span>
+
+                </div>
+                <div>
+                    <span id="secondTimer">00</span>
+                    <span class="textTimer">Seconds</span>
+
+                </div>
+            </div>
+
         </div>
 
     </div>
-
-
 </body>
 
 </html>
