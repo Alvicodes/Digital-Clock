@@ -16,7 +16,7 @@ function updateClock() {
     let day = days[d.getDay()]; // Returns the weekday of a date as a number (0-6). Filtered through the days array
     let ampm = "AM";
 
-    if (h > 12) {
+    if (h >= 12) {
         h = h - 12;
         ampm = "PM";
     }
@@ -45,7 +45,10 @@ let seconds = 0;
 let minutes = 0;
 let hours = 0;
 let stopstatus = 0;
-let timer = document.querySelector('.timer')
+let timer = document.querySelector('.timer');
+let hourTimer = document.getElementById("hourTimer");
+let minuteTimer = document.getElementById("minuteTimer");
+let secondTimer = document.getElementById("secondTimer");
 
 start.addEventListener('click', () => {
     if (stopstatus !== 0) {
@@ -65,7 +68,9 @@ start.addEventListener('click', () => {
         m = minutes < 10 ? "0" + minutes : minutes;
         s = seconds < 10 ? "0" + seconds : seconds;
 
-        timer.innerHTML = `${h} : ${m} : ${s}`;
+        hourTimer.innerHTML = `${h}`;
+        minuteTimer.innerHTML = `${m}`;
+        secondTimer.innerHTML = `${s}`;
     }, 1000);
 });
 
@@ -78,7 +83,9 @@ reset.addEventListener('click', () => {
     seconds = 0;
     minutes = 0;
     hours = 0;
-    timer.innerHTML = '00 : 00 : 00 ';
+    hourTimer.innerHTML = '00';
+    minuteTimer.innerHTML = '00';
+    secondTimer.innerHTML = '00';
 });
 // Toggle button
 const clock = document.querySelector(".clock");
@@ -88,8 +95,6 @@ const timerContainer = document.getElementById("timerContainer");
 
 tglCheckbox.addEventListener('change', () => {
     if (tglCheckbox.checked) {
-        // clock.style.transition = ".10s ease";
-        // timerContainer.style.transition = "all .30s ease";
         timerContainer.style.display = "none";
         sleep(80);
         clock.style.display = "flex";
@@ -98,7 +103,8 @@ tglCheckbox.addEventListener('change', () => {
         clock.style.display = "none";
         sleep(80);
         timerContainer.style.display = "inline-block";
-        toggleItem.style.background = "transparernt";
+        // toggleItem.style.background = "white";
+        // toggleItem.style.background = "transparernt";
     }
 })
 function sleep(milliseconds) { const date = Date.now(); let currentDate = null; do { currentDate = Date.now(); } while (currentDate - date < milliseconds); }

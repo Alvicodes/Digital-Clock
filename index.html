@@ -25,6 +25,11 @@
         <span id="dayOfTheWeek"></span>
         <span id="ampm">AM</span>
     </div>
+    <div class="timerBtns">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="reset">Reset</button>
+    </div>
     <div class="clock">
         <div>
             <span id="hour">00</span>
@@ -45,12 +50,22 @@
     </div>
     <div id="timerContainer">
         <div class="timer">
-            00 : 00 : 00
-        </div>
-        <div class="timerBtns ">
-            <button id="start">Start</button>
-            <button id="pause">Pause</button>
-            <button id="reset">Reset</button>
+            <!-- 00 : 00 : 00 -->
+            <div>
+                <span id="hourTimer">00</span>
+                <span class="textTimer">Hours</span>
+
+            </div>
+            <div>
+                <span id="minuteTimer">00</span>
+                <span class="textTimer">Minutes</span>
+
+            </div>
+            <div>
+                <span id="secondTimer">00</span>
+                <span class="textTimer">Seconds</span>
+
+            </div>
         </div>
 
     </div>
